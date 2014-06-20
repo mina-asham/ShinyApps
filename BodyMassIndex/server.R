@@ -66,7 +66,7 @@ shinyServer(
     #Scatter Plot Output
     output$scatter <- renderPlot({
       if(input$isMetric) {
-        plot(stats$weight, stats$height, xlab="Weight In Kilograms", ylab="Height In Centimeters", pch=20, cex=2, col="blue")
+        plot(stats$weight, stats$height, xlab="Weight In Kilograms", ylab="Height In Centimeters", pch=20, cex=2, col="blue", main="Height Vs. Weight")
       } else {
         plot(stats$weightPounds, stats$heightInches, xlab="Weight In Pounds", ylab="Height In Inches", pch=20, cex=2, col="blue", main="Height Vs. Weight")
       }
