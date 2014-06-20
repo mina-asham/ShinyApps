@@ -68,7 +68,7 @@ shinyServer(
       if(input$isMetric) {
         plot(stats$weight, stats$height, xlab="Weight In Kilograms", ylab="Height In Centimeters", pch=20, cex=2, col="blue")
       } else {
-        plot(stats$weightPounds, stats$heightInches, xlab="Weight In Pounds", ylab="Height In Inches", pch=20, cex=2, col="blue")
+        plot(stats$weightPounds, stats$heightInches, xlab="Weight In Pounds", ylab="Height In Inches", pch=20, cex=2, col="blue", main="Height Vs. Weight")
       }
 
       #If Height And Weight Exists, Draw User Point
@@ -81,7 +81,7 @@ shinyServer(
 
     #Histogram Output
     output$histogram <- renderPlot({
-      hist(stats$bmi, xlab="BMI", ylab="People Count", col="lightblue", main="Histogram")
+      hist(stats$bmi, breaks=20, xlab="BMI", ylab="People Count", col="lightblue", main="BMI Histogram")
 
       h = as.numeric(input$height)
       w = as.numeric(input$weight)
